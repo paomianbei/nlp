@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv = "X-UA-Compatible" content = "IE=edge,chrome=1">
+    <title>分析结果</title>
+    <link rel="stylesheet" href="../statics/lib/element-ui/css/index.css">
+    <link rel="stylesheet" href="../statics/css/style.css">
+</head>
+<body>
+  <div id="app" class="result" v-cloak>
+      <el-card class="input-card">
+          <div slot="header" class="clearfix input-title">
+              <span @click="contentChange()" :class="{show:contentStyle}">内容分析</span>
+              <span @click="titleChange()" :class="{show:titleStyle}">标题分析</span>
+          </div>
+         <div class="body clearfix">
+             <el-input
+                     type="textarea"
+                     :rows=7
+                     placeholder="请输入内容"
+                     v-model="inputText">
+             </el-input>
+             <div class="btn">
+                 <el-button class="empty" @click="empty()">清空</el-button>
+                 <el-button class="confirm" @click="submit()">确定</el-button>
+             </div>
+         </div>
+      </el-card>
+      <!--中文分词-->
+      <el-card class="chinese-card">
+          <div slot="header" class="clearfix">
+              <span >中文分词</span>
+          </div>
+          <div class="body clearfix">
+              <div  class="chinese public entity" id="chinese">
+              </div>
+          </div>
+      </el-card>
+      <!--文本分类-->
+      <el-card class="classify-card" :class="{show:show}">
+          <div slot="header" class="clearfix">
+              <span >文本分类</span>
+          </div>
+          <div class="body clearfix" >
+              <div id="textClassify" style="min-width: 700px;min-height:200px;" v-loading="loading">
+              </div>
+          </div>
+      </el-card>
+      <!--实体识别-->
+      <el-card class="entity-card" :class="{show:show}">
+          <div slot="header" class="clearfix">
+              <span >实体识别</span>
+          </div>
+          <div class="body clearfix">
+              <div  class="entity public">
+                  <div class="entity-classify clearfix">
+                      <span class="text-core">中心词</span>
+                      <span class="text-brand">品牌词</span>
+                      <span class="text-color">颜色</span>
+                      <span class="text-cat">品类词</span>
+                      <span class="text-modifier">修饰词</span>
+                      <span class="text-promotion">促销语</span>
+                      <span class="text-mode">型号</span>
+                  </div>
+                  <div class="entity-content" id="entityContent">
+                  </div>
+              </div>
+          </div>
+      </el-card>
+      <!--正负面分析-->
+      <el-card class="zf-analysis">
+          <div slot="header" class="clearfix">
+              <span >文本正负面分析</span>
+          </div>
+          <div class="body clearfix">
+              <div class="analysis clearfix">
+                  <div class="smile">
+                      <!--<a href="javascript:void(0);" class="detail smile-detail">进入详情</a>-->
+                  </div>
+                  <div class="wrap clearfix">
+                      <div class="smile-show">
+                          <a href="javascript:void(0);" class="detail smile-detail">正面<span class="smile-percent">50</span>%</a>
+                          <!--<span class="smile-percent"> </span>-->
+                      </div>
+                      <div class="cry-show">
+                          <a href="javascript:void(0);" class="detail cry-detail">负面<span class="cry-percent">50</span>%</a>
+                          <!--<span class="cry-percent"> </span>-->
+                      </div>
+                  </div>
+                  <div class="cry">
+                      <!--<a href="javascript:void(0);" class="detail cry-detail">进入详情</a>-->
+                  </div>
+              </div>
+          </div>
+      </el-card>
+      <!--联想词-->
+      <el-card class="relation-word cont-relation" >
+          <div slot="header" class="clearfix">
+              <span >word2vector</span>
+          </div>
+          <div id="relationC" style="min-width:700px;min-height:200px;">
+          </div>
+      </el-card>
+      <!--联想词标题分析-->
+      <el-card class="relation-word title-relation" >
+          <div slot="header" class="clearfix">
+              <span >word2vector</span>
+          </div>
+          <div id="relationT" style="min-width:700px;min-height:200px;">
+          </div>
+      </el-card>
+  </div>
+  <script src="../statics/lib/lib.js"></script>
+  <script src="../statics/lib/echarts.min.js"></script>
+  <script src="../statics/js/result.js"></script>
+</body>
+</html>

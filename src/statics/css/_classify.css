@@ -1,0 +1,88 @@
+[v-cloak]{
+    display:none;
+}
+.el-card {
+    font-size:14px;
+    border:0 none;
+    border-bottom:1px solid #c5ced8;
+    box-shadow: none;
+}
+.el-card .el-card__header {
+    padding:0 10px;
+    line-height: 40px;
+    color:#fff;
+    overflow: auto;
+    background-color: #242a30;
+
+}
+
+.box-card .el-card__body {
+    padding:20px 100px;
+    background: url(../images/main/demo_show.png) no-repeat 95%;
+    background-size: 358px 280px;
+}
+.box-card .introduce {
+    width: 60%;
+}
+.box-card .introduce .title {
+    font-size:36px;
+    line-height: 120px;
+}
+.box-card  .introduce p {
+    line-height: 30px;
+}
+.box-card .image {
+    float: right;
+}
+.box-card .btn {
+    width: 160px;
+    height: 47px;
+    background-color: #1b81de;
+    box-shadow: 0 5px  5px #e4e4e4;
+    border-radius: 4px;
+    margin:auto;
+    margin-bottom:30px;
+}
+.box-card .btn .demo {
+    width:100%;
+    height: 40px;
+    color:#fff;
+    background-color: #348fe2;
+    border:0 none;
+}
+.classify {
+    margin-top: 30px;
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+.classify .classify-card {
+    webkit-box-flex: 1; /* OLD - iOS 6-, Safari 3.1-6 */
+    -moz-box-flex: 1; /* OLD - Firefox 19- */
+    width: 18.5%; /* For old syntax, otherwise collapses. */
+    -webkit-flex: 1; /* Chrome */
+    -ms-flex: 1; /* IE 10 */
+    flex: 1; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    margin-right:30px;
+    float: left;
+}
+.classify .classify-card:last-of-type {
+    margin-right:0;
+}
+.classify .classify-card .el-card__body {
+    padding:50px 30px;
+}
+.classify .classify-card .introduce {
+    text-align: center;
+}
+.classify .classify-card .introduce img {
+    width: 50%;
+    height:100%;
+}
+.classify .classify-card .introduce p {
+    line-height: 30px;
+    text-align: justify;
+    margin-top: 60px;
+}
